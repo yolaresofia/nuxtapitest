@@ -16,20 +16,22 @@ export default {
     return {
       x: 1,
       date: 0,
-      mountain : '',
-      posts:''
+      mountain: "",
+      posts: "",
     };
+  },
+  mounted() {
+    setInterval(() => {
+      this.test();
+    }, 2000);
   },
   methods: {
     async test() {
-       this.mountain = await fetch('/api/test').then(res =>
-        res.json())
+      this.mountain = await fetch("/api/test").then((res) => res.json());
     },
-     async test2() {
-       this.posts = await fetch('/api/test').then(res =>
-        res.json()
-      )
+    async test2() {
+      this.posts = await fetch("/api/test").then((res) => res.json());
     },
-  }
+  },
 };
 </script>
