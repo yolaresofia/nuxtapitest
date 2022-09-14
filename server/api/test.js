@@ -4,7 +4,9 @@ export default defineEventHandler(async () => {
     const response = await axios.get(
       "https://api.neoscan.io/api/main_net/v1/get_all_nodes"
     );
-    return(response.data);
+    console.log("new Date()")
+    const a = new Date();
+    return { time: a };
   } catch (err) {
     console.log(err);
   }
